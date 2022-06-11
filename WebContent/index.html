@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+.myDiv{
+	margin-top: 15%;
+	margin-left: 30%;
+	font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<div class="myDiv"> 
+<font face="Arial"><b>You will be redirected to the Dental Clinic web app in <br><br>
+<input type="text" size="3" id="timer" name="redirect2" value="5">
+seconds</b></font>
+</div>
+
+<script>
+	var targetURL="./dental-clinic";
+	var currentsecond=5;
+	function countredirect(){
+		if(currentsecond!=1){
+			currentsecond-=1;
+			document.getElementById('timer').value=currentsecond;
+		}
+		else{
+			window.location=targetURL;
+			return;
+		}
+		setTimeout("countredirect()",1000);
+	}
+	countredirect();
+</script>
+</body>
+</html>
